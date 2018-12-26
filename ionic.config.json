@@ -1,0 +1,8 @@
+{
+  "name": "tellmommy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "886449f4"
+}
