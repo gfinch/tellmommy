@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="mail" color="primary" item-start></ion-icon>
+      <ion-input type="email" [(ngModel)]="registrationDetails.email" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock" color="primary" item-start></ion-icon>
+      <ion-input type="password" [(ngModel)]="registrationDetails.password" value=""
+                 placeholder="Choose Password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock" color="primary" item-start></ion-icon>
+      <ion-input type="password" [(ngModel)]="registrationDetails.repeatPassword" value=""
+                 placeholder="Repeat Password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button block large round (click)="doRegister()" [disabled]="isButtonDisabled">Register</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button clear small item-end (click)="goToLoginPage()">Already Registered?</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

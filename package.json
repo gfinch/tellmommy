@@ -5,10 +5,27 @@
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
-    "start": "ionic-app-scripts serve",
+    "start": "[ -f src/aws-exports.js ] && mv src/aws-exports.js src/aws-exports.ts || ionic-app-scripts serve",
+    "build": "[ -f src/aws-exports.js ] && mv src/aws-exports.js src/aws-exports.ts || ionic-app-scripts build",
     "clean": "ionic-app-scripts clean",
-    "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint"
+    "lint": "ionic-app-scripts lint",
+    "test": "jest",
+    "clear_jest": "jest --clearCache"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/?!(aws-amplify-angular|aws-amplify)"
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
@@ -25,15 +42,25 @@
     "@ionic-native/status-bar": "~4.18.0",
     "@ionic/pro": "2.0.4",
     "@ionic/storage": "2.2.0",
-    "ionic-angular": "3.9.2",
+    "aws-amplify": "^1.1.18",
+    "aws-amplify-angular": "^2.1.5",
+    "ionic-angular": "^3.9.2",
     "ionicons": "3.0.0",
+    "md5": "^2.2.1",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
     "@ionic/app-scripts": "3.2.1",
-    "typescript": "~2.6.2"
+    "@types/jest": "^23.3.10",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "jest": "^23.6.0",
+    "reflect-metadata": "^0.1.12",
+    "ts-jest": "^23.10.5",
+    "ts-mockito": "^2.3.1",
+    "typescript": "^2.9.2"
   },
   "description": "An Ionic project"
 }

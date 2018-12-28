@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "tellmommy-20181226212835-authRole",
+            "UnauthRoleArn": "arn:aws:iam::207843647879:role/tellmommy-20181226212835-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::207843647879:role/tellmommy-20181226212835-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "tellmommy-20181226212835-deployment",
+            "UnauthRoleName": "tellmommy-20181226212835-unauthRole",
+            "StackName": "tellmommy-20181226212835",
+            "StackId": "arn:aws:cloudformation:us-east-1:207843647879:stack/tellmommy-20181226212835/741048d0-0987-11e9-8a43-0eaa79b17470"
+        }
+    }
+}
